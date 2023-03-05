@@ -1,0 +1,14 @@
+{
+  "consoles": [
+    {
+      "id": "nes",
+      "name": "Nintendo Entertainment System",
+      "image": "console_nes.jpeg"
+    },
+    {
+      "id": "amstrad-gx4000",
+      "name": "Amstrad GX4000",
+      "image": "console_amstrad.jpeg"
+    }
+  ]
+}

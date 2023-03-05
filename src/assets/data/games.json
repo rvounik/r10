@@ -1,0 +1,14 @@
+{
+  "games": [
+    {
+      "id": "kart",
+      "name": "Kart",
+      "image": "game_kart.jpeg"
+    },
+    {
+      "id": "out-of-bounds",
+      "name": "Out of bounds",
+      "image": "game_outofbounds.png"
+    }
+  ]
+}

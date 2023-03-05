@@ -1,0 +1,6 @@
+
+/* load css variables so they become available in the global css */
+@import './variables/index.scss';
+
+/* load base specifications */
+@import './base/index.scss';
