@@ -1,18 +1,34 @@
 <script setup>
-import { ref } from 'vue';
 
-// todo: figure out how to highlight also for sub pages
-// const isActive = ref(true);
+// since menu component is outside of router-view, it needs to be imported here
+import router from './../../router';
 
+import { computed } from 'vue';
+
+const currentRoute = computed(() => {
+  return router.currentRoute.value
+});
+
+/* add the active class if given identifier is part of the current route */
+const isActive = (id) => {
+  const regex = new RegExp(`^\\/${id}(\\/|$)`);
+  return regex.test(currentRoute.value.path);
+};
 </script>
 
 <template>
   <nav>
-    <router-link active-class="active" to="/">MYSELF</router-link>
-    <router-link active-class="active" to="/games">MY GAMES</router-link>
-    <router-link active-class="active" to="/consoles">MY CONSOLES</router-link>
+    <router-link
+        :to="{ path: '/games' }"
+        :class="{ 'menu-item': true, active: isActive('games') }"
+    >Games</router-link>
+    <router-link
+        :to="{ path: '/consoles' }"
+        :class="{ 'menu-item': true, active: isActive('consoles') }"
+    >Consoles</router-link>
   </nav>
 </template>
+
 
 <style lang="scss" scoped>
 nav {
@@ -33,6 +49,16 @@ nav {
     margin: .75rem 1rem 0;
     display: inline-block;
   }
+}
+
+.menu-item {
+  color: black;
+  /* add your default menu item styles here */
+}
+
+.menu-item.active {
+  color: red;
+  /* add your active menu item styles here */
 }
 
 .active {

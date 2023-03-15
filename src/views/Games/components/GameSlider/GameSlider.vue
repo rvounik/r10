@@ -2,15 +2,20 @@
 </script>
 
 <template>
-  <figure>
+  <section>
     <slot/>
-  </figure>
+  </section>
 </template>
 
 <style lang="scss" scoped>
-figure {
+section {
   background: $black;
-  height: 100%;
+  height: calc(100% - 3rem - 10rem);
+  width: 50%;
   padding: 1rem;
+
+  img {
+    display: inline;
+  }
 }
 </style>

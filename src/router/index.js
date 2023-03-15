@@ -20,7 +20,7 @@ const routes = [
     component: Games,
   },
   {
-    path: '/game/:id',
+    path: '/games/:id',
     component: Game
   },
   {
@@ -29,7 +29,7 @@ const routes = [
     component: Consoles,
   },
   {
-    path: '/console/:id',
+    path: '/consoles/:id',
     component: Console
   },
   {
@@ -38,6 +38,7 @@ const routes = [
     component: Error
   }
 ];
+
 const router = createRouter({
   history: createWebHashHistory(),
   routes,

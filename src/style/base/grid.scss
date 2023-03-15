@@ -1,0 +1,9 @@
+#layout {
+  display: flex;
+  flex-direction: column;
+  height: $grid_layout_height;
+
+  > main {
+    height: calc($grid_layout_height - $grid_header_height - $grid_menu_height - $grid_footer_height);
+  }
+}

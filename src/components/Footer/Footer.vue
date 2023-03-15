@@ -2,13 +2,14 @@
 </script>
 
 <template>
-  <main>
-    404!
-  </main>
+  <footer>
+    (c) rvo
+  </footer>
 </template>
 
+
 <style lang="scss" scoped>
-main {
-  color: red;
-}
+  footer {
+    background: pink;
+  }
 </style>

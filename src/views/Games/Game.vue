@@ -1,5 +1,5 @@
 <script setup>
-import GameCanvas from './../../components/GameCanvas/GameCanvas.vue'
+import GameCanvas from './components/GameViewer/GameViewer.vue'
 </script>
 
 <template>

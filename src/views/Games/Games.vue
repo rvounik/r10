@@ -1,54 +1,59 @@
 <script setup>
-import * as data from '../../assets/data/games.json';
-import ListSlider from '../../components/GameSlider/GameSlider.vue';
+import { ref } from 'vue'
+import { useGamesStore } from '../../stores/games'
+
+import GameSlider from './components/GameSlider/GameSlider.vue';
+import SelectList from './../../components/SelectList/SelectList.vue'
+
+const store = useGamesStore()
+const games = ref(store.games)
 </script>
 
 <template>
   <main>
+
     <GameSlider>
-      <router-link key="index" to="/game/out-of-bounds">
+      <router-link key="index" to="/games/out-of-bounds">
         <figure>
           <img src="./../../assets/images/game_outofbounds.png" alt="out of bounds">
         </figure>
       </router-link>
     </GameSlider>
 
-    <nav>
+    <nav class="selectListWrapper">
       <section>
-      <span>Quick Select:</span>
-        <select>
-          <option v-for="(game, index) in data.games">
-              {{ game.name }}
-          </option>
-        </select>
-      </section>
+        <span>Quick Select:</span>
+          <SelectList :games="games"/>
+        </section>
     </nav>
 
   </main>
 </template>
 
 <style lang="scss" scoped>
-ul {
-  li {
-    height: 100px;
-    width: 100px;
-    background: black;
-    color: white;
-    margin: .25rem;
-    float: left;
+main {
+  > section {
+    width: 100%;
+    height: calc(100% - 5rem);
+  }
+
+  >nav {
+    height: 5rem;
   }
 }
-nav {
+.selectListWrapper {
   text-align: center;
+  height: 3rem;
 
-  section {
+  > section {
     margin-top: .5rem;
 
-    ul {
-      padding: .5rem;
+    span {
+      margin-right: .5rem;
     }
   }
 }
+
 figure {
   text-align: center;
 }
