@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 
 // lazy loading:
 const Home = () => import('../views/Home.vue')
+const About = () => import('../views/About/About.vue')
 const Games = () => import('../views/Games/Games.vue')
 const Game = () => import('../views/Games/Game.vue')
 const Consoles = () => import('../views/Consoles/Consoles.vue')
@@ -13,6 +14,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home,
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: About,
   },
   {
     path: '/games',

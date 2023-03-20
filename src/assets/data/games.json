@@ -1,14 +1,72 @@
-{
-  "games": [
+[
     {
       "id": "kart",
       "name": "Kart",
-      "image": "game_kart.jpeg"
+      "description": "This it the description of the game",
+      "image": "game_kart.png",
+      "tags": ["html", "javascript"]
     },
     {
       "id": "out-of-bounds",
       "name": "Out of bounds",
-      "image": "game_outofbounds.png"
+      "description": "This it the description of the game",
+      "image": "game_out-of-bounds.png",
+      "tags": ["html", "javascript"]
+    },
+    {
+      "id": "thramor-2",
+      "name": "Thramor 2",
+      "description": "This it the description of the game",
+      "image": "game_thramor-2.png",
+      "tags": ["html", "javascript"]
+    },
+    {
+      "id": "juan",
+      "name": "Juan come manzanas",
+      "description": "This it the description of the game",
+      "image": "game_juan.png",
+      "tags": ["html", "javascript"]
+    },
+    {
+      "id": "rainbow-panic",
+      "name": "Rainbow panic",
+      "description": "This it the description of the game",
+      "image": "game_rainbow-panic.png",
+      "tags": ["html", "javascript"]
+    },
+    {
+      "id": "legend-of-thramor",
+      "name": "Legend of Thramor",
+      "description": "This it the description of the game",
+      "image": "game_legend-of-thramor.png",
+      "tags": ["html", "javascript"]
+    },
+    {
+      "id": "chess",
+      "name": "Chess",
+      "description": "This it the description of the game",
+      "image": "game_chess.png",
+      "tags": ["html", "javascript"]
+    },
+    {
+      "id": "ray-2",
+      "name": "Ray 2",
+      "description": "This it the description of the game",
+      "image": "game_ray-2.png",
+      "tags": ["html", "javascript"]
+    },
+    {
+      "id": "gta",
+      "name": "GTA",
+      "description": "This it the description of the game",
+      "image": "game_gta.png",
+      "tags": ["html", "javascript"]
+    },
+    {
+      "id": "rts",
+      "name": "RTS",
+      "description": "This it the description of the game",
+      "image": "game_rts.png",
+      "tags": ["html", "javascript"]
     }
-  ]
-}
+]

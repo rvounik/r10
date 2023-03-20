@@ -1,15 +1,22 @@
-import { defineStore } from 'pinia'
-import { ref, onMounted } from 'vue'
+import {ref} from 'vue'
 
-export const useGamesStore = defineStore('games', () => {
-    const games = ref([])
+const games = ref([])
 
-    onMounted(async () => {
+// see https://logaretm.com/blog/build-pinia-stores-from-composition-api/ for other request examples
+export function useGamesStore() {
+    async function fetchGames() {
+        try {
+            games.value = await fetch('../assets/data/games.json')
+            .then((r) => r.json());
+        } catch (error) {
 
-        // todo: to be replace with a proper API request whenever I can be bothered to write a backend :)
-        const response = await fetch('../assets/data/games.json')
-        games.value = await response.json()
-    })
+            // todo: handle error / show alert
+            console.log('error')
+        }
+    }
 
-    return { games }
-})
+    return {
+        games,
+        fetchGames
+    };
+}

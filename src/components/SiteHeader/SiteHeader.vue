@@ -1,51 +1,77 @@
 <script setup>
-  import { ref, reactive } from 'vue';
-
-  const state = reactive({ count: 0 }) // looks a bit like React hook
-
-
-  const incrementTest = () => {
-    if (state.count<10) {
-      state.count++;
-    }
-  }
-
-  window.setInterval( () => { incrementTest() }, 50)
 </script>
 
 <template>
-    <header>
-        <h1>R{{state.count < 10 ? '0' : ''}}{{state.count}}</h1>
-      <span>(because it is the 10th revision of my website, duh)</span>
-    </header>
+  <header class="header">
+    <h1 class="title">
+      <span>V</span><span>A</span><span>N</span><span>O</span><span>O</span><span>I</span><span>J</span><span>.</span><span>N</span><span>L</span>
+    </h1>
+    <slot/>
+  </header>
 </template>
 
 <style lang="scss" scoped>
 
-header {
-  height: 10rem;
-  background: url('/src/assets/images/site_header.jpg');
-  padding-top: 1rem;
+.header {
+  height: $header-height-small;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  align-items: center;
+  background: url('/src/assets/images/site_header.jpg') center 90% no-repeat #000;
+  background-size: cover;
+}
 
-  h1 {
-    font-size: 6.5rem;
-    color: $white;
-    font-family: $font_header;
-    display: inline-block;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 1);
-
-    &:first-letter {
-      color: lightblue;
-    }
-  }
-
-  span {
-    font-size: .85rem;
-    color: #ccc;
-    display: block;
-    text-shadow: 0 0 10px rgba(0, 0, 0, .75);
+@media screen and (min-width: $breakpoint-small) {
+  .header {
+    height: $header-height-large;
   }
 }
 
+@media screen and (min-width: $breakpoint-large) {
+  .header {
+    height: $header-height-extra-large;
+  }
+}
+
+.title {
+  display: flex;
+  flex: 1;
+  line-height: 4rem;
+  text-indent: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  font-family: Luckiest Guy,cursive;
+  position: relative;
+  font-size: 5rem;
+  letter-spacing: 4px;
+  padding: .5rem 0 0 0.5rem;
+}
+
+@media screen and (min-width: $breakpoint-large) {
+  .title {
+    padding: 2rem 1rem;
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+}
+
+.title span {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  line-height: 4rem;
+  font-family: Luckiest Guy,cursive;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+@media screen and (min-width: 960px) {
+  .title span {
+    font-size: 5rem;
+    letter-spacing: 4px;
+  }
+}
 </style>

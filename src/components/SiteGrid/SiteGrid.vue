@@ -3,16 +3,20 @@
 
 <template>
   <section id="layout">
-    <slot/>
+    <div class="wrapper">
+      <slot/>
+    </div>
   </section>
 </template>
 
 <style lang="scss">
-#layout {
-  margin: auto;
-  background: #eef7ff;
-  color: $black;
-  box-shadow: 0 0 12px 6px rgba(0, 0, 0, .3);
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  background: #666;
 }
 </style>
 
