@@ -19,13 +19,13 @@ const isActive = (id) => {
 <template>
   <nav class="nav">
     <ul>
-      <li :class="{ active: isActive('about') }">
+      <li :class="{ active: isActive('about'), about: isActive('about') }">
         <router-link :to="{ path: '/about' }">About</router-link>
       </li>
       <li :class="{ active: isActive('games') }">
         <router-link :to="{ path: '/games' }">Games</router-link>
       </li>
-      <li :class="{ active: isActive('consoles') }">
+      <li :class="{ active: isActive('consoles'), consoles: isActive('consoles') }">
         <router-link :to="{ path: '/consoles' }">Consoles</router-link>
       </li>
     </ul>
@@ -42,10 +42,10 @@ const isActive = (id) => {
   width: 100%;
   background: linear-gradient(0deg, rgba(0, 0, 0, .8) 20%, transparent);
   transition: background-color .5s;
-  max-width: 1200px;
 
   a {
-    color: white;
+    color: $white;
+    font-size: 1rem;
   }
 
   ul {
@@ -58,7 +58,7 @@ const isActive = (id) => {
       vertical-align: middle;
       display: inline-block;
       height: 100%;
-      padding: .5rem 1rem;
+      padding: .75rem 1rem;
       box-sizing: border-box;
     }
   }
@@ -71,14 +71,31 @@ const isActive = (id) => {
   a {
     color: $white;
   }
+
+  &.about {
+    background-color: $white;
+
+    a {
+      color: $black;
+    }
+  }
+
+  &.consoles {
+    background-color: chocolate;
+
+    a {
+      color: $white;
+    }
+  }
+
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: $breakpoint-small) {
   .active {
     background-color: $white;
 
     a {
-      color: #333;
+      color: $black-light;
     }
   }
 }

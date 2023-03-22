@@ -14,12 +14,12 @@
 
 .header {
   height: $header-height-small;
-  color: #fff;
+  color: $white;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
-  background: url('/src/assets/images/site_header.jpg') center 90% no-repeat #000;
+  background: url('/src/assets/images/site_header.png') center 90% no-repeat #000;
   background-size: cover;
 }
 
@@ -41,7 +41,6 @@
   line-height: 4rem;
   text-indent: 1rem;
   width: 100%;
-  max-width: 1200px;
   box-sizing: border-box;
   font-family: Luckiest Guy,cursive;
   position: relative;
@@ -68,7 +67,7 @@
   letter-spacing: 2px;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: $breakpoint-large) {
   .title span {
     font-size: 5rem;
     letter-spacing: 4px;

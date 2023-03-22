@@ -10,13 +10,18 @@
 </template>
 
 <style lang="scss">
+#layout {
+  overflow: hidden;
+  box-sizing: border-box;
+}
 .wrapper {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-flow: column;
-  align-items: stretch;
   background: #666;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 </style>
 

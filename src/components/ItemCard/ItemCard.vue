@@ -4,13 +4,20 @@ import TagList from './../TagList/TagList.vue';
 defineProps({
   item: Object
 });
+
+const openGame = url => {
+  window.open(url, '_blank');
+}
+
 </script>
 
 <template>
   <article class="card">
     <section class="card_section_title">
-      <h2>{{ item.name }}</h2>
-      <img :src="`/src/assets/images/${item.image}`"/>
+      <h2>{{ item.name }}<span>({{ item.year }})</span></h2>
+      <figure>
+        <img :src="`/assets/images/${item.image}`" @click="openGame(item.url)" :alt="item.id"/>
+      </figure>
       <TagList :tags="item.tags"/>
     </section>
     <section class="card_section_text">
@@ -39,21 +46,40 @@ defineProps({
 
   h2 {
     font-size: 1.5rem;
-    color: #333;
+    color: $black-light;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+    span {
+      font-weight: bold;
+      font-size: .85rem;
+      margin-left: auto;
+      color: #999;
+    }
   }
 
   p {
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #333;
+    color: $black-light;
   }
 
-  img {
-    width: 100%;
-    margin: .5rem 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    object-fit: contain;
+  figure {
+    max-height: calc(100% - 3rem);
+    padding: 1rem 0;
+    box-sizing: border-box;
+
+    img {
+      height: 100%;
+      width: 100%;
+      max-width: fit-content;
+      object-fit: contain;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 
   /* show the card as a single-column card on large screens */
@@ -63,7 +89,7 @@ defineProps({
     height: 80%;
     max-height: 600px;
     border-radius: .5rem;
-    box-shadow: 0px 0px 17px 7px rgb(0 0 0 / 19%);;
+    box-shadow: 0 0 17px 7px rgb(0 0 0 / 20%);
   }
 
   /* show the card as a double-column card on extra large screens */
@@ -78,11 +104,13 @@ defineProps({
       width: 50%;
       padding-right: 3rem;
       border-right: dashed 1px #ccc;
+      display: flex;
+      flex-direction: column;
     }
 
     .card_section_text {
       width: 50%;
-      padding: 2rem 2rem 0;
+      padding: 2.5rem 2rem 0;
     }
   }
 }

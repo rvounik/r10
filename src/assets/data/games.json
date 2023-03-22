@@ -2,71 +2,91 @@
     {
       "id": "kart",
       "name": "Kart",
-      "description": "This it the description of the game",
+      "description": "Game engine written in Javascript with help of the CreateJS library. You can control the kart using the cursor keys. It has sound so turn up the volume.",
       "image": "game_kart.png",
-      "tags": ["html", "javascript"]
+      "tags": ["html", "javascript"],
+      "url": "../games/kart/index.html",
+      "year": "2015"
     },
     {
       "id": "out-of-bounds",
       "name": "Out of bounds",
-      "description": "This it the description of the game",
+      "description": "I wanted to see if I could recreate one of those classic golf games of the early nineties (pga tour golf) but using a pseudo-3d projection. as usual once the engine is finished I cant be bothered finishing it to a playable state, so right now you can not finish this game in any way. It has sound so turn up the volume.",
       "image": "game_out-of-bounds.png",
-      "tags": ["html", "javascript"]
+      "tags": ["html", "javascript"],
+      "url": "../games/outofbounds/index.html",
+      "year": "2020"
     },
     {
       "id": "thramor-2",
       "name": "Thramor 2",
-      "description": "This it the description of the game",
+      "description": "I wanted to make an overhead-RPG type of game that has deadzone scrolling, which means it will only start scrolling once you reach the screen edge. Everything is heavily tile-based as you can probably see! There are some sound effects.",
       "image": "game_thramor-2.png",
-      "tags": ["html", "javascript"]
+      "tags": ["html", "javascript"],
+      "url": "../games/thramor2/index.html",
+      "year": "2022"
     },
     {
       "id": "juan",
       "name": "Juan come manzanas",
-      "description": "This it the description of the game",
+      "description": "A quick game I wrote in a day to entertain those who I left behind on holiday. The idea is to catch the apples that fall from above, avoiding everything else. It has sound, so turn the volume up.",
       "image": "game_juan.png",
-      "tags": ["html", "javascript"]
+      "tags": ["html", "javascript"],
+      "url": "../games/juan/index.html",
+      "year": "2019"
     },
     {
       "id": "rainbow-panic",
       "name": "Rainbow panic",
-      "description": "This it the description of the game",
+      "description": "Colourful puzzle game that is optimised for mobile devices. The idea is to click away blocks of the same color, create huge combo's and progress through all the levels. It has sound so turn the volume up.",
       "image": "game_rainbow-panic.png",
-      "tags": ["html", "javascript"]
+      "tags": ["html", "javascript"],
+      "url": "../games/rainbowpanic/index.html",
+      "year": "2014"
     },
     {
       "id": "legend-of-thramor",
       "name": "Legend of Thramor",
-      "description": "This it the description of the game",
+      "description": "Adventure game in the style of classic 8-bit Zelda. Even though the combat system doesnt really work and the game can become a bit boring, I still think its a fun game with some nice little puzzles and cool effects. It has sound so turn the volume up.",
       "image": "game_legend-of-thramor.png",
-      "tags": ["html", "javascript"]
+      "tags": ["html", "javascript"],
+      "url": "../games/thramor/index.html",
+      "year": "2014"
     },
     {
       "id": "chess",
       "name": "Chess",
-      "description": "This it the description of the game",
+      "description": "I always thought writing a Chess game was hard. So one day I decided to give it a try and guess what, it really is difficult to write something that can calculate many moves ahead whilst still being performant! Currently no user control, just the computer playing against itself.",
       "image": "game_chess.png",
-      "tags": ["html", "javascript"]
+      "tags": ["html", "javascript"],
+      "url": "../games/chess/index.html",
+      "year": "2023"
     },
     {
       "id": "ray-2",
       "name": "Ray 2",
-      "description": "This it the description of the game",
+      "description": "Ah, raycasters. Powering 3d games since Wolfenstein and Doom. This is my second attempt writing such an engine myself and even though I am really familiar with the technique, I always get stuck at the texturing part. To be continued then.",
       "image": "game_ray-2.png",
-      "tags": ["html", "javascript"]
+      "tags": ["html", "javascript"],
+      "url": "../games/ray2/index.html",
+      "year": "2021"
     },
     {
       "id": "gta",
       "name": "GTA",
-      "description": "This it the description of the game",
+      "description": "Game engine based on the old grand theft auto game. You know, the one you played from above. I had a great idea of making this work with just simple HTML5 and it worked out fine. You can walk around a bit using the cursor keys.",
       "image": "game_gta.png",
-      "tags": ["html", "javascript"]
+      "tags": ["html", "javascript"],
+      "url": "../games/gta/index.html",
+      "year": "2021"
     },
     {
       "id": "rts",
       "name": "RTS",
-      "description": "This it the description of the game",
+      "description": "This it a game engine based on RTS games like Command & Conquer, Dune etcetera. You control the units using the mouse, can explore the map and eliminate all enemy units. There is sound so turn up the volume.",
       "image": "game_rts.png",
-      "tags": ["html", "javascript"]
+      "tags": ["html", "javascript"],
+      "url": "../games/rts/index.html",
+      "year": "2018"
     }
 ]

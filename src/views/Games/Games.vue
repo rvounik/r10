@@ -1,7 +1,11 @@
 <script setup>
 import { reactive, watch, onMounted, computed } from 'vue'
+import { register } from 'swiper/element/bundle';
 import { useGamesStore } from '../../stores/games'
 import ItemCard from './../../components/ItemCard/ItemCard.vue';
+
+// register js-slider web component
+register();
 
 const store = useGamesStore();
 
@@ -18,7 +22,9 @@ onMounted(async () => {
 
 // watcher for API call returning
 watch(store.games, (newValue, oldValue) => {
-  state.loading = false;
+  if (newValue && newValue.length) {
+    state.loading = false;
+  }
 })
 
 // using a computed property just for this may be a bit overkill but its good practice
@@ -26,117 +32,53 @@ const isLoading = computed(() => {
   return state.loading;
 });
 
-const currentItem = computed(() => {
-  return store.games.value[state.activeItem];
-})
-
-const prevItem = computed(() => {
-  return store.games.value[state.activeItem > 0 ? state.activeItem - 1 : store.games.value.length - 1];
-})
-
-const nextItem = computed(() => {
-  return store.games.value[state.activeItem < (store.games.value.length - 1) ? state.activeItem + 1 : 0];
-})
-
-
-
-
-
-
-
-const scrollToItem = direction => {
-  if (state.navigationLocked) { return }
-
-  const gallery = document.getElementById('gallery');
-
-  // disable further navigation
-  state.navigationLocked = true;
-
-  // transform the slider from the middle to either the left or right node, depending on direction
-  gallery.style.transition = 'transform .5s';
-  gallery.style.transform = direction === 'right' ? 'translateX(-200vw)' : 'translateX(0vw)'
-
-  gallery.addEventListener('transitionend', () => {
-
-    // move slider back to default position
-    gallery.style.transition = 'transform .005s';
-    gallery.style.transform = 'translateX(-100vw)';
-
-    // after it has done so, update the state so the state.currentItem reflects the change made to the view
-    gallery.addEventListener('transitionend', () => {
-      updateState(direction);
-    });
-  }, { once: true });
+const prevSlide = () => {
+  const swiperEl = document.querySelector('swiper-container');
+  swiperEl.swiper.slidePrev();
+}
+const nextSlide = () => {
+  const swiperEl = document.querySelector('swiper-container');
+  swiperEl.swiper.slideNext();
 }
 
-
-
-
-
-
-const updateState = direction => {
-
-  // update state so the new image appears
-  if (direction === 'right') {
-    state.activeItem < (store.games.value.length - 1)
-        ? state.activeItem++
-        : state.activeItem = 0;
-  }
-
-  if (direction === 'left') {
-    state.activeItem > 0
-        ? state.activeItem--
-        : state.activeItem = (store.games.value.length - 1);
-  }
-
-  // re-enable navigation
-  state.navigationLocked = false;
-}
-
-const toPrevItem = () => {
-  scrollToItem('left');
-}
-
-const toNextItem = () => {
-  scrollToItem('right');
-}
 </script>
 
 <template>
     <div v-if="isLoading">
       <easy-spinner/>
     </div>
+  <swiper-container
+      v-else
+      slides-per-view="1"
+      speed="500"
+      loop="true"
+      css-mode="false"
+      modules={[Navigation]}
+      autoplay="true"
+      class="gallery"
+      keyboard="true"
+      pagination="true"
+      loopPreventsSliding="true"
+  >
+      <swiper-slide v-for="(item, index) in store.games.value" :item="item" :key="index" class="gallery_item">
+        <ItemCard :item="item" />
+      </swiper-slide>
+  </swiper-container>
 
-    <ul v-else class="gallery" id="gallery" >
-      <li><ItemCard :item="prevItem" /></li>
-      <li><ItemCard :item="currentItem" /></li>
-      <li><ItemCard :item="nextItem" /></li>
-    </ul>
+    <div class="button" @click.prevent="prevSlide">
+      <a href="#" class="previous">&laquo;</a>
+    </div>
 
-    <div class="button" @click="toPrevItem"></div>
-    <div class="button right" @click="toNextItem"></div>
+    <div class="button right" @click.prevent="nextSlide">
+      <a href="#" class="next">&raquo;</a>
+    </div>
 </template>
 
 <style lang="scss" scoped>
 .gallery {
-  font-size: 0;
-  text-align: center;
-  width: 300vw;
-  height: 100%;
-  margin-bottom: auto;
-  overflow-y: auto;
-  overflow-x: scroll;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
-  white-space: nowrap;
-  transform: translateX(-100vw);
-
-  > li {
+  .gallery_item {
     width: 100vw;
-    height: calc(100vh - $header-height-small - $footer-height);
+    height: calc(100% - $header-height-small - $footer-height);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -152,19 +94,33 @@ const toNextItem = () => {
 }
 
 .button {
-  height: 5rem;
-  width: 5rem;
-  background: black;
-  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  background: #000;
+  opacity: .5;
   position: absolute;
-  left: -2.5rem;
+  left: 1rem;
+  z-index: 100;
+  box-shadow: 0 0 10px 3px rgb(0 0 0 / 20%);
+  display: none;
+
+  @media screen and (min-width: $breakpoint-small) {
+    display: block;
+  }
+
+  a {
+    color: $white;
+    font-family: monospace;
+    font-size: 2rem;
+    line-height: 1.6rem;
+  }
 
   &:hover {
     cursor: pointer;
   }
 
   &.right {
-    right: -2.5rem;
+    right: 1rem;
     left: unset;
   }
 }

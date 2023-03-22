@@ -5,7 +5,7 @@ defineProps({
 </script>
 
 <template>
-  <ul class="taglist">
+  <ul>
     <li v-for="tag in tags">
       {{ tag }}
     </li>
@@ -13,19 +13,19 @@ defineProps({
 </template>
 
 <style lang="scss" scoped>
-.taglist {
+ul {
   font-size: 14px;
   line-height: 18px;
-  color: #333;
+  color: $black-light;
   font-weight: bold;
   list-style-type: none;
-  margin-bottom: .6rem;
+  margin-bottom: .5rem !important;
 
   li {
     border: solid 1px #ccc;
-    padding: 0.25rem;
+    padding: .25rem;
     display: inline;
-    border-radius: 0.25rem;
+    border-radius: .25rem;
     font-size: 12px;
     color: #666;
   }

@@ -12,7 +12,7 @@ $radial-gradient: #999 0%, #999 20%, #666 80%;
 
 main {
   overflow: hidden;
-  height: calc(100vh - $header-height-small);
+  height: calc(100% - $header-height-small - $footer-height);
   display: flex;
   flex-direction: column;
   background: $white;
@@ -29,12 +29,12 @@ main {
   }
 
   @media screen and (min-width: $breakpoint-small) {
-    height: calc(100vh - $header-height-large);
+    height: calc(100vh - $header-height-large - $footer-height);
     background: radial-gradient($radial-gradient);
   }
 
   @media screen and (min-width: $breakpoint-large) {
-    height: calc(100vh - $header-height-extra-large);
+    height: calc(100vh - $header-height-extra-large - $footer-height);
     background: radial-gradient($radial-gradient);
   }
 }
