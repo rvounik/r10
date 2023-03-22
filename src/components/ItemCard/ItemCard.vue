@@ -51,6 +51,10 @@ const openGame = url => {
     flex-direction: row;
     align-items: baseline;
 
+    @media only screen and (min-width: $breakpoint-extra-large) {
+      font-size: 2.5rem;
+    }
+
     span {
       font-weight: bold;
       font-size: .85rem;
@@ -63,6 +67,11 @@ const openGame = url => {
     font-size: 1rem;
     line-height: 1.5rem;
     color: $black-light;
+
+    @media only screen and (min-width: $breakpoint-extra-large) {
+      font-size: 1.25rem;
+      line-height: 2rem;
+    }
   }
 
   figure {
@@ -111,6 +120,8 @@ const openGame = url => {
     .card_section_text {
       width: 50%;
       padding: 2.5rem 2rem 0;
+
+
     }
   }
 }

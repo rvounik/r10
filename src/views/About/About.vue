@@ -46,7 +46,7 @@ import AutoColumns from '../../components/AutoColumns/AutoColumns.vue';
     text-align: left;
 
     @media only screen and (min-width: $breakpoint-extra-large) {
-      font-size: 3.25rem;
+      font-size: 2.5rem;
     }
   }
 }

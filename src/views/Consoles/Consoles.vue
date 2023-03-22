@@ -45,7 +45,7 @@ import * as data from '../../assets/data/consoles.json';
     text-align: left;
 
     @media only screen and (min-width: $breakpoint-extra-large) {
-      font-size: 3.25rem;
+      font-size: 2.5rem;
     }
   }
 
@@ -59,7 +59,7 @@ import * as data from '../../assets/data/consoles.json';
     color: $black;
 
     @media only screen and (min-width: $breakpoint-extra-large) {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       padding: 2rem 0;
     }
   }

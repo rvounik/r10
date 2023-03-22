@@ -37,8 +37,8 @@ article {
     line-height: 2.5rem;
 
     @media only screen and (min-width: $breakpoint-extra-large) {
-      font-size: 2.25rem;
-      line-height: 3.5rem;
+      font-size: 2rem;
+      line-height: 3rem;
     }
   }
 
@@ -52,13 +52,17 @@ article {
     color: $black;
 
     @media only screen and (min-width: $breakpoint-extra-large) {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
 
-    a, u, strong {
+    a, u, i, strong {
       font-size: inherit;
       color: $black-light;
       text-decoration: underline;
+    }
+
+    i, strong {
+      text-decoration: none;
     }
   }
 
