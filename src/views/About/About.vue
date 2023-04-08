@@ -6,7 +6,7 @@ import AutoColumns from '../../components/AutoColumns/AutoColumns.vue';
   <div class="inner_wrapper">
     <h2>About me</h2>
     <AutoColumns columns="2" ruleColor="#999">
-      <p>Hi there! My name is Robbin and I'm a bit of a nerd. I grew up with the Commodore 64 and Amiga but was always fascinated by the vast amount of game consoles released, especially in those wonderful eighties and nineties. In fact, I'd keep a little list of consoles I would <strong>some day</strong> collect since I sure didnt have any money for it back then!</p>
+      <p>Hi there! My name is Robbin and I'm a bit of a nerd 🤓 I grew up with the Commodore 64 and Amiga but was always fascinated by the vast amount of game consoles released, especially in those wonderful eighties and nineties. In fact, I'd keep a little list of consoles I would <strong>some day</strong> collect since I sure didnt have any money for it back then!</p>
       <p>So here I am, several decades later 🙈 Yes, I've kept my promise and actually possess all the consoles from the aforementioned list and many more! I made this website to share my collection and write all sorts of fun facts and trivia on them. But ofcourse I will never have time for that, so it's just a list for now.</p>
       <h3>My own games</h3>
       <p>Oh, and I wasnt just fascinated by the consoles and computers themselves, I also loved to see what technical tricks they could pull off. For example, the first <i>Mario Kart</i> on the Super Nintendo used this graphics mode they called <i>Mode 7</i> which is a fancy name for a sprite scaler. I really wanted to know how that worked internally so I wrote a software version of it because I had become a Frontend developer. Fun times!</p>
