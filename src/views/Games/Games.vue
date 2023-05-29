@@ -1,17 +1,58 @@
+<!--export default {-->
+<!--  components: {-->
+<!--    Swiper,-->
+<!--    SwiperSlide,-->
+<!--    ItemCard-->
+<!--  },-->
+<!--  setup() {-->
+<!--    const swiper = ref(null);-->
+<!--    const state = reactive({-->
+<!--      loading: true-->
+<!--    });-->
+
+<!--    const onSwiper = (swiperInstance) => {-->
+<!--      swiper.value = swiperInstance;-->
+<!--    };-->
+
+<!--    const prevSlide = () => {-->
+<!--      if (swiper.value) {-->
+<!--        swiper.value.slidePrev();-->
+<!--      }-->
+<!--    };-->
+
+<!--    const nextSlide = () => {-->
+<!--      if (swiper.value) {-->
+<!--        swiper.value.slideNext();-->
+<!--      }-->
+<!--    };-->
+
+<!--    return {-->
+<!--      store,-->
+<!--      swiper,-->
+<!--      onSwiper,-->
+<!--      prevSlide,-->
+<!--      nextSlide,-->
+<!--      isLoading-->
+<!--    };-->
+<!--  }-->
+<!--};-->
+
 <script setup>
-import { reactive, watch, onMounted, computed } from 'vue'
-import { register } from 'swiper/element/bundle';
-import { useGamesStore } from '../../stores/games'
+import { reactive, watch, onMounted, computed, ref } from 'vue';
+import { useGamesStore } from '../../stores/games';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
+import 'swiper/css';
+import SwiperCore, { Navigation } from 'swiper/core';
 import ItemCard from './../../components/ItemCard/ItemCard.vue';
 
-// register js-slider web component
-register();
+SwiperCore.use([Navigation]);
 
 const store = useGamesStore();
+// const swiper = ref(null);
 
 const state = reactive({
   activeItem: 0,
-  tags: ['html','javascript'],
+  tags: ['html', 'javascript'],
   loading: true,
   navigationLocked: false
 });
@@ -20,58 +61,65 @@ onMounted(async () => {
   await store.fetchGames();
 });
 
-// watcher for API call returning
 watch(store.games, (newValue, oldValue) => {
   if (newValue && newValue.length) {
     state.loading = false;
   }
-})
-
-// using a computed property just for this may be a bit overkill but its good practice
-const isLoading = computed(() => {
-  return state.loading;
 });
 
-const prevSlide = () => {
-  const swiperEl = document.querySelector('swiper-container');
-  swiperEl.swiper.slidePrev();
-}
-const nextSlide = () => {
-  const swiperEl = document.querySelector('swiper-container');
-  swiperEl.swiper.slideNext();
-}
+// using a computed property just for this may be a bit overkill but its good practice
+const isLoading = computed(() => state.loading);
 
+// const onSwiper = (swiper) => {
+//   state.swiper = swiper;
+// };
+
+const onSwiper = swiperInstance => {
+  // swiper.value = swiperInstance;
+  state.swiper = swiperInstance;
+};
+
+const prevSlide = () => {
+  // if (swiper.value) {
+  if (state.swiper) {
+    // swiper.value.slidePrev();
+    state.swiper.slidePrev();
+  }
+};
+
+const nextSlide = () => {
+  // if (swiper.value) {
+  if (state.swiper) {
+    // swiper.value.slideNext();
+    state.swiper.slideNext();
+  }
+};
 </script>
 
+
 <template>
-    <div v-if="isLoading">
-      <easy-spinner/>
-    </div>
-  <swiper-container
-      v-else
-      slides-per-view="1"
-      speed="500"
-      loop="true"
-      css-mode="false"
-      modules={[Navigation]}
-      autoplay="true"
-      class="gallery"
-      keyboard="true"
-      pagination="true"
-      loopPreventsSliding="true"
+<!--    <div v-if="isLoading">-->
+<!--      <easy-spinner/>-->
+<!--    </div>-->
+  <Swiper
+      :slides-per-view="1"
+      :space-between="50"
+      @swiper="onSwiper"
+      :class="swiper"
   >
       <swiper-slide v-for="(item, index) in store.games.value" :item="item" :key="index" class="gallery_item">
         <ItemCard :item="item" />
       </swiper-slide>
-  </swiper-container>
+  </Swiper>
 
-    <div class="button" @click.prevent="prevSlide">
+    <div class="button testLeft" @click.prevent="prevSlide">
       <a href="#" class="previous">&laquo;</a>
     </div>
 
-    <div class="button right" @click.prevent="nextSlide">
+    <div class="button right testRight" @click.prevent="nextSlide">
       <a href="#" class="next">&raquo;</a>
     </div>
+
 </template>
 
 <style lang="scss" scoped>

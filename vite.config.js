@@ -25,4 +25,9 @@ export default defineConfig({
             targets: ['defaults', 'not IE 11'],
         }),
     ],
+    // resolve: {
+    //     alias: {
+    //         'swiper/bundle': 'swiper/swiper-bundle'
+    //     }
+    // }
 })

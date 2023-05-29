@@ -11,7 +11,7 @@ export function useGamesStore() {
         } catch (error) {
 
             // todo: handle error / show alert
-            console.log('error')
+            console.log('error fetching json!')
         }
     }
 
