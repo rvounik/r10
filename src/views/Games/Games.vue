@@ -48,7 +48,7 @@ const nextSlide = () => {
 </script>
 
 <template>
-  <div v-if="isLoading">
+  <div v-if="isLoading" class="loader">
     <!--      <easy-spinner/>-->
   </div>
   <div v-else>
