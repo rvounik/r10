@@ -1,26 +1,6 @@
 import { mount } from '@vue/test-utils';
 import Games from './../../src/views/Games/Games.vue';
-import { useGamesStore } from '../../src/stores/games';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
-const item = {
-    "id": "kart",
-    "name": "Kart",
-    "description": "Game engine written in Javascript with help of the CreateJS library. You can control the kart using the cursor keys. It has sound so turn up the volume.",
-    "image": "game_kart.png",
-    "tags": ["html", "javascript"],
-    "url": "../games/kart/index.html",
-    "year": "2015"
-};
-
-jest.mock('swiper/vue', () => ({
-    Swiper: {
-        template: '<div class="my-mock-class"></div>',
-    },
-    SwiperSlide: {
-        template: '<div></div>',
-    },
-}));
 
 jest.mock('./../../src/stores/games', () => {
     const { gamesMock } = require('./games.mock');
@@ -49,23 +29,39 @@ describe('Games', () => {
             },
         });
 
-        const { fetchGames } = useGamesStore();
-
         let loader;
 
+        // Ensure there is a loader
         loader = wrapper.find('.loader');
-
         expect(loader.exists()).toBe(true);
 
-        // if you disable, the loader stays. if you enable, loader goes and Swiper is rendered
+        // Simulate the completion of loading
         wrapper.vm.loading = false;
-
         await wrapper.vm.$nextTick();
 
-        loader = wrapper.find('.loader'); // try to find it once more
+        // Ensure there is no loader
+        loader = wrapper.find('.loader');
         expect(loader.exists()).toBe(false);
 
-        // const activeSlide = wrapper.find('.swiper-slide-active');
-        // expect(activeSlide.exists()).toBe(true);
+        // Ensure there is a Swiper instance
+        const swiperComponent = wrapper.findComponent(Swiper);
+        expect(swiperComponent.exists()).toBe(true);
+
+        // Ensure there is navigation
+        const prevButton = wrapper.find('.button .previous');
+        const nextButton = wrapper.find('.button.right .next');
+        expect(prevButton.exists()).toBe(true);
+        expect(nextButton.exists()).toBe(true);
+
+        // Navigate to the next slide
+        await nextButton.trigger('click');
+
+        // Assert that the slideNext method is called
+        // expect(swiperComponent.vm.methods.slideNext).toHaveBeenCalled();
+        // expect(swiperComponent.vm.slideNext).toHaveBeenCalled();
+        // expect(swiperComponent.vm.$options.methods.slideNext).toHaveBeenCalled();
+        expect(wrapper.vm.$refs.swiperRef.swiper.slideNext).toHaveBeenCalled();
+
+
     });
 });
