@@ -13,9 +13,10 @@ const store = useGamesStore();
 const state = reactive({
   activeItem: 0,
   tags: ['html', 'javascript'],
-  loading: true,
   navigationLocked: false
 });
+
+const loading = ref(true); // Ref for the loading property
 
 onMounted(async () => {
   await store.fetchGames();
@@ -23,12 +24,12 @@ onMounted(async () => {
 
 watch(store.games, (newValue, oldValue) => {
   if (newValue && newValue.length) {
-    state.loading = false;
+    loading.value = false; // Update the loading ref to false
   }
 });
 
-// using a computed property just for this may be a bit overkill but its good practice
-const isLoading = computed(() => state.loading);
+// using a computed property just for this may be a bit overkill but it's good practice
+const isLoading = computed(() => loading.value);
 
 const onSwiper = swiperInstance => {
   state.swiper = swiperInstance;
@@ -58,9 +59,9 @@ const nextSlide = () => {
       @swiper="onSwiper"
       :class="swiper"
   >
-      <swiper-slide v-for="(item, index) in store.games.value" :item="item" :key="index" class="gallery_item">
+      <SwiperSlide v-for="(item, index) in store.games.value" :item="item" :key="index" class="gallery_item">
         <ItemCard :item="item" />
-      </swiper-slide>
+      </SwiperSlide>
   </Swiper>
   </div>
 

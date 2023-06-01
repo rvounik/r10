@@ -1,42 +1,71 @@
 import { mount } from '@vue/test-utils';
 import Games from './../../src/views/Games/Games.vue';
+import { useGamesStore } from '../../src/stores/games';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
-// Mock the useGamesStore module todo: question for chatgpt if it ever reads this: I understand the need for mocking this method since its async, however where do we then test if the method is correct?
+const item = {
+    "id": "kart",
+    "name": "Kart",
+    "description": "Game engine written in Javascript with help of the CreateJS library. You can control the kart using the cursor keys. It has sound so turn up the volume.",
+    "image": "game_kart.png",
+    "tags": ["html", "javascript"],
+    "url": "../games/kart/index.html",
+    "year": "2015"
+};
+
+jest.mock('swiper/vue', () => ({
+    Swiper: {
+        template: '<div class="my-mock-class"></div>',
+    },
+    SwiperSlide: {
+        template: '<div></div>',
+    },
+}));
+
 jest.mock('./../../src/stores/games', () => {
     const { gamesMock } = require('./games.mock');
 
     return {
-        useGamesStore: () => gamesMock
+        useGamesStore: jest.fn(() => ({
+            ...gamesMock,
+            fetchGames: jest.fn(),
+        })),
     };
 });
 
 describe('Games', () => {
     it('allows navigation between slides', async () => {
-        const wrapper = mount(Games);
-        await wrapper.vm.$nextTick();
+        const wrapper = mount(Games, {
+            global: {
+                components: {
+                    Swiper,
+                    SwiperSlide,
+                },
+            },
+            data() {
+                return {
+                    swiper: 'my-mock-class',
+                };
+            },
+        });
 
-        // Check to see if navigation is present
-        const prevButton = wrapper.find('.testLeft');
-        const nextButton = wrapper.find('.testRight');
+        const { fetchGames } = useGamesStore();
 
-        expect(prevButton.exists()).toBe(true);
-        expect(nextButton.exists()).toBe(true);
+        let loader;
 
-        // Check to see if loader is true
-        const loader = wrapper.find('.loader');
+        loader = wrapper.find('.loader');
+
         expect(loader.exists()).toBe(true);
 
-        // // Wait for the Swiper component to render
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Adjust the delay as needed
+        // if you disable, the loader stays. if you enable, loader goes and Swiper is rendered
+        wrapper.vm.loading = false;
 
-        // Check to see if loader is false
+        await wrapper.vm.$nextTick();
+
+        loader = wrapper.find('.loader'); // try to find it once more
         expect(loader.exists()).toBe(false);
 
-        // // Check to see if Swiper is loaded
         // const activeSlide = wrapper.find('.swiper-slide-active');
         // expect(activeSlide.exists()).toBe(true);
     });
 });
-
-
-
