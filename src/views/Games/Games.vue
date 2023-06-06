@@ -46,6 +46,7 @@ const nextSlide = () => {
     state.swiper.slideNext();
   }
 };
+
 </script>
 
 <template>
