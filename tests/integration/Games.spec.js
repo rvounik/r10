@@ -56,7 +56,8 @@ jest.mock('swiper/vue', () => ({
 
 describe('Games', () => {
     it('allows navigation between slides', async () => {
-        const slideNextMock = jest.fn();
+        const setSomeStatePropMock = jest.fn(); // Mock the custom function
+        const nextSlideMock = jest.fn();
 
         const wrapper = mount(Games, {
             global: {
@@ -68,7 +69,8 @@ describe('Games', () => {
             stubs: {
                 Swiper: {
                     methods: {
-                        slideNext: slideNextMock,
+                        setSomeStateProp: setSomeStatePropMock,
+                        nextSlide: nextSlideMock
                     },
                 },
             },
@@ -76,8 +78,15 @@ describe('Games', () => {
                 return {
                     swiper: 'my-mock-class'
                 };
-            },
+            }
         });
+
+        // Access the component instance after the click event
+        const componentInstance = wrapper.vm;
+
+        // Assign the mock function to the component method
+        componentInstance.setSomeStateProp = setSomeStatePropMock;
+        componentInstance.nextSlide = nextSlideMock;
 
         let loader;
 
@@ -105,17 +114,19 @@ describe('Games', () => {
         const slides = slidesMock;
         expect(slides.length).toBe(2);
 
-        // console.log('Swiper component HTML:', swiperComponentWrapper.html());
-
         // Assert the number of rendered slides
         const renderedSlides = swiperComponentWrapper.findAllComponents(SwiperSlide);
         expect(renderedSlides.length).toBe(slides.length);
 
-        // Navigate to the next slide
-        await nextButton.trigger('click');
+        // Ensure the next slide button is present
+        const nextSlideButton = wrapper.find('.testRight');
+        expect(nextSlideButton.exists()).toBe(true);
+
+        // navigate to the next slide
+        await nextSlideButton.trigger('click');
         await wrapper.vm.$nextTick();
 
-        // Assert that the slideNextMock has been called
-        // expect(slideNextMock).toHaveBeenCalled();
+        // ensure the function to go to the next slide is called once
+        expect(nextSlideMock).toHaveBeenCalledTimes(1);
     });
 });
