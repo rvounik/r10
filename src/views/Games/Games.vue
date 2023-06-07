@@ -2,9 +2,9 @@
 import { reactive, watch, onMounted, computed, ref } from 'vue';
 import { useGamesStore } from '../../stores/games';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
-import 'swiper/css';
 import SwiperCore, { Navigation } from 'swiper/core';
 import ItemCard from './../../components/ItemCard/ItemCard.vue';
+import 'swiper/css';
 
 SwiperCore.use([Navigation]);
 
@@ -60,7 +60,7 @@ const nextSlide = () => {
       @swiper="onSwiper"
       :class="swiper"
   >
-      <SwiperSlide v-for="(item, index) in store.games.value" :item="item" :key="index" class="gallery_item">
+      <SwiperSlide v-for="(item, index) in store.games.value" :item="item" :key="index" class="testing">
         <ItemCard :item="item" />
       </SwiperSlide>
   </Swiper>
@@ -77,22 +77,9 @@ const nextSlide = () => {
 </template>
 
 <style lang="scss" scoped>
-.gallery {
-  .gallery_item {
-    width: 100vw;
-    height: calc(100% - $header-height-small - $footer-height);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @media screen and (min-width: $breakpoint-small) {
-      height: calc(100vh - $header-height-large - $footer-height);
-    }
-
-    @media screen and (min-width: $breakpoint-large) {
-      height: calc(100vh - $header-height-extra-large - $footer-height);
-    }
-  }
+.testing {
+  display: flex;
+  justify-content: center;
 }
 
 .button {
