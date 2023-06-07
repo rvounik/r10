@@ -14,52 +14,42 @@ jest.mock('./../../src/stores/games', () => {
     };
 });
 
-jest.mock('swiper/vue', () => ({
-    Swiper: {
-        template: `
-      <div data-testid="Swiper-testId">
-        <slot>
-            <SwiperSlide
-                :item="{
-                  id: 'item1',
-                  name: 'Item 1',
-                  description: 'Desc 1',
-                  image: 'some_image_1.png',
-                  tags: ['tag1', 'tag2'],
-                  url: '../some-url',
-                  year: '2001'
-                }" key="1" class="gallery_item"
-            />
-            <SwiperSlide
-                :item="{
-                  id: 'item2',
-                  name: 'Item 2',
-                  description: 'Desc 2',
-                  image: 'some_image_2.png',
-                  tags: ['tag1', 'tag2'],
-                  url: '../some-url',
-                  year: '2002'
-                }" key="1" class="gallery_item"
-            />
-        </slot>
-      </div>
-    `,
-    },
-    SwiperSlide: {
-        template: `
-      <div data-testid="SwiperSlide-testId">
-        <slot></slot>
-      </div>
-    `,
-    },
-}));
+jest.mock('swiper/vue', () => {
+    const { slidesMock } = require('./slides.mock');
+
+    return {
+        Swiper: {
+            template: `
+                <div data-testid="Swiper-testId">
+                  <slot>
+                    <template v-for="slide in slides" :key="slide.id">
+                      <SwiperSlide :item="slide" class="gallery_item" />
+                    </template>
+                  </slot>
+                </div>
+            `,
+            computed: {
+                slides() {
+                    return slidesMock;
+                },
+            },
+        },
+        SwiperSlide: {
+            template: `
+        <div data-testid="SwiperSlide-testId">
+          <slot></slot>
+        </div>
+      `,
+        },
+    };
+});
 
 describe('Games', () => {
     it('allows navigation between slides', async () => {
         const setSomeStatePropMock = jest.fn(); // Mock the custom function
         const nextSlideMock = jest.fn();
 
-        const wrapper = mount(Games, {
+        const wrapper = mount(Games, { // eslint-disable-line
             global: {
                 components: {
                     Swiper,
