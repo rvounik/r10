@@ -1,102 +1,696 @@
-{
-  "consoles": [
-    "Acorn Archimedes a3010",
-    "Amstrad CPC 464",
-    "Amstrad GX4000 (32-in-1)",
-    "Nintendo Famicom",
-    "Nintendo NES",
-    "Nintendo SNES (sd2snes pro)",
-    "Nintendo Gameboy",
-    "Nintendo Gameboy pocket",
-    "Nintendo Gameboy light",
-    "Nintendo Gameboy color",
-    "Nintendo Gameboy micro",
-    "Nintendo Gameboy advance",
-    "Nintendo Gameboy advance SP",
-    "Pokemon mini",
-    "Nintendo N64",
-    "Nintendo Wii (modded)",
-    "Nintendo Wii U (modded)",
-    "Nintendo DSi (modded)",
-    "Nintendo N3ds xl (modded)",
-    "Nintendo Game Cube (modded)",
-    "Nintendo Virtual Boy (hyperboy)",
-    "Mega Duck",
-    "Watara Super Vision",
-    "Tiger Game.com",
-    "Tiger Gizmondo",
-    "Amiga 1200 (many, many mods)",
-    "Amiga CD32",
-    "Commodore 64 (chameleon64)",
-    "Commodore 64 Game System",
-    "Bandai/Atmark Pippin",
-    "Bandai SwanCrystal",
-    "Philips CD-i 450 (fmv)",
-    "Atari VCS/2600 (light sixer)",
-    "Atari 5200",
-    "Atari 7800",
-    "Atari Lynx mk1",
-    "Atary Lynx mk2",
-    "Atari Jaguar (gamedrive)",
-    "Atari Jaguar CD",
-    "Atari STe 1040 (gotek)",
-    "Acorn Electron",
-    "Texas Instruments TI-99",
-    "Texas Instruments TI-84+",
-    "Barcode Battler",
-    "Casio Loopy",
-    "Sinclair ZX80",
-    "Sinclair ZX81",
-    "Sinclair ZX Spectrum + DIVMMC",
-    "Fm-Towns Marty",
-    "Sharp X68000 (8mb, mt-32)",
-    "Windows PC (rtx 2060)",
-    "Sony Playstation (modded)",
-    "Sony Playstation 2 (modded)",
-    "Sony Playstation 3 (modded)",
-    "Sony Playstation 4 pro (modded)",
-    "Sony Playstation 4",
-    "Sony PSP",
-    "Sony PS Vita (modded)",
-    "Sony xperia play r800i",
-    "Nokia N-gage (mk1)",
-    "Nokia N-gage (mk2)",
-    "Nikko Digiblast",
-    "Sega SG-1000 mk1",
-    "Sega Master System (mk1)",
-    "Sega Master System mk2",
-    "Sega Game Gear",
-    "Sega Mega Drive (mk1)",
-    "Sega Mega Drive (mk2)",
-    "Sega Mega CD (mk1)",
-    "Sega Mega CD mk2",
-    "Sega 32x (everdrive X5)",
-    "Sega Saturn (modded)",
-    "Sega Dreamcast",
-    "Sega IR7000",
-    "Neo Geo AES (neo sd)",
-    "Neo Geo pocket",
-    "Neo Geo X (modded)",
-    "Mattel Intellivision",
-    "Mattel Aquarius",
-    "CBS Colecovision",
-    "Philips +G7400 / videopac",
-    "Philips MSX2+ 8245 (carnivore2)",
-    "Panasonic 3DO mk1 (fz-1)",
-    "Panasonic 3DO mk2 (fz-10)",
-    "NEC PC Engine (everdrive 2)",
-    "NEC SuperGrafx",
-    "NEC Super Cdrom2",
-    "NEC PC-FX",
-    "Microsoft Xbox (modded)",
-    "Microsoft Xbox 360",
-    "Razer Ouya (modded)",
-    "Atari XE Game System",
-    "Mattel Hyperscan",
-    "NES top loader",
-    "Hartung Game Master",
-    "MB Vectrex",
-    "Tapwave Zodiac",
-    "Timetop Game King / Handy game",
-  ]
-}
+[
+  {
+    "title": "Archimedes a3010",
+    "brand": "Acorn",
+    "generation": 4,
+    "released": 1992,
+    "acquired": 2022
+  },
+  {
+    "title": "CPC 464",
+    "brand": "Amstrad",
+    "generation": 3,
+    "released": 1984,
+    "acquired": null
+  },
+  {
+    "title": "GX4000",
+    "brand": "Amstrad",
+    "generation": 3,
+    "released": 1991,
+    "acquired": null
+  },
+  {
+    "title": "Famicom",
+    "brand": "Nintendo",
+    "generation": 3,
+    "released": 1983,
+    "acquired": null
+  },
+  {
+    "title": "NES",
+    "brand": "Nintendo",
+    "generation": 3,
+    "released": 1985,
+    "acquired": null
+  },
+  {
+    "title": "Super Nintendo",
+    "brand": "Nintendo",
+    "generation": 4,
+    "released": 1990,
+    "acquired": null
+  },
+  {
+    "title": "Gameboy",
+    "brand": "Nintendo",
+    "generation": 4,
+    "released": 1989,
+    "acquired": null
+  },
+  {
+    "title": "Gameboy pocket",
+    "brand": "Nintendo",
+    "generation": 4,
+    "released": 1996,
+    "acquired": null
+  },
+  {
+    "title": "Gameboy light",
+    "brand": "Nintendo",
+    "generation": 4,
+    "released": 1998,
+    "acquired": null
+  },
+  {
+    "title": "Gameboy color",
+    "brand": "Nintendo",
+    "generation": 5,
+    "released": 1998,
+    "acquired": null
+  },
+  {
+    "title": "Gameboy micro",
+    "brand": "Nintendo",
+    "generation": 6,
+    "released": 2005,
+    "acquired": null
+  },
+  {
+    "title": "Gameboy advance",
+    "brand": "Nintendo",
+    "generation": 6,
+    "released": 2001,
+    "acquired": null
+  },
+  {
+    "title": "Gameboy advance SP",
+    "brand": "Nintendo",
+    "generation": 6,
+    "released": 2003,
+    "acquired": null
+  },
+  {
+    "title": "Pokemon mini",
+    "brand": "Nintendo",
+    "generation": 4,
+    "released": 2001,
+    "acquired": null
+  },
+  {
+    "title": "N64",
+    "brand": "Nintendo",
+    "generation": 5,
+    "released": 1996,
+    "acquired": null
+  },
+  {
+    "title": "Wii",
+    "brand": "Nintendo",
+    "generation": 7,
+    "released": 2006,
+    "acquired": null
+  },
+  {
+    "title": "Wii U",
+    "brand": "Nintendo",
+    "generation": 8,
+    "released": 2012,
+    "acquired": null
+  },
+  {
+    "title": "DSi",
+    "brand": "Nintendo",
+    "generation": 7,
+    "released": 2008,
+    "acquired": null
+  },
+  {
+    "title": "N3ds xl",
+    "brand": "Nintendo",
+    "generation": 8,
+    "released": 2011,
+    "acquired": null
+  },
+  {
+    "title": "Game Cube",
+    "brand": "Nintendo",
+    "generation": 6,
+    "released": 2001,
+    "acquired": null
+  },
+  {
+    "title": "Virtual Boy",
+    "brand": "Nintendo",
+    "generation": 5,
+    "released": 1995,
+    "acquired": null
+  },
+  {
+    "title": "Mega Duck",
+    "brand": "Mega Duck",
+    "generation": 4,
+    "released": 1993,
+    "acquired": null
+  },
+  {
+    "title": "Super Vision",
+    "brand": "Watara",
+    "generation": 4,
+    "released": 1992,
+    "acquired": null
+  },
+  {
+    "title": "Game.com",
+    "brand": "Tiger",
+    "generation": 5,
+    "released": 1997,
+    "acquired": null
+  },
+  {
+    "title": "Gizmondo",
+    "brand": "Tiger",
+    "generation": 7,
+    "released": 2005,
+    "acquired": null
+  },
+  {
+    "title": "Amiga 1200",
+    "brand": "Commodore ",
+    "generation": 5,
+    "released": 1992,
+    "acquired": 1995,
+    "link": "amiga"
+  },
+  {
+    "title": "Amiga CD-32",
+    "brand": "Commodore",
+    "generation": 5,
+    "released": 1993,
+    "acquired": null
+  },
+  {
+    "title": "c64",
+    "brand": "Commodore",
+    "generation": 3,
+    "released": 1982,
+    "acquired": null
+  },
+  {
+    "title": "c64 Game System",
+    "brand": "Commodore",
+    "generation": 3,
+    "released": 1990,
+    "acquired": null
+  },
+  {
+    "title": "Pippin",
+    "brand": "Bandai/Atmark",
+    "generation": 5,
+    "released": 1996,
+    "acquired": null
+  },
+  {
+    "title": "SwanCrystal",
+    "brand": "Bandai",
+    "generation": 6,
+    "released": 2002,
+    "acquired": null
+  },
+  {
+    "title": "CD-i 450",
+    "brand": "Philips",
+    "generation": 4,
+    "released": 1994,
+    "acquired": null
+  },
+  {
+    "title": "VCS/2600",
+    "brand": "Atari",
+    "generation": 2,
+    "released": 1977,
+    "acquired": null
+  },
+  {
+    "title": "5200",
+    "brand": "Atari",
+    "generation": 2,
+    "released": 1982,
+    "acquired": null
+  },
+  {
+    "title": "7800",
+    "brand": "Atari",
+    "generation": 3,
+    "released": 1986,
+    "acquired": null
+  },
+  {
+    "title": "Lynx mk1",
+    "brand": "Atari",
+    "generation": 4,
+    "released": 1989,
+    "acquired": null
+  },
+  {
+    "title": "Lynx mk2",
+    "brand": "Atari",
+    "generation": 4,
+    "released": 1991,
+    "acquired": null
+  },
+  {
+    "title": "Jaguar",
+    "brand": "Atari",
+    "generation": 5,
+    "released": 1993,
+    "acquired": null
+  },
+  {
+    "title": "Jaguar CD",
+    "brand": "Atari",
+    "generation": 5,
+    "released": 1995,
+    "acquired": null
+  },
+  {
+    "title": "STe 1040",
+    "brand": "Atari",
+    "generation": 4,
+    "released": 1989,
+    "acquired": null
+  },
+  {
+    "title": "Electron",
+    "brand": "Acorn",
+    "generation": 3,
+    "released": 1983,
+    "acquired": null
+  },
+  {
+    "title": "TI-99",
+    "brand": "Texas Instruments",
+    "generation": 3,
+    "released": 1981,
+    "acquired": null
+  },
+  {
+    "title": "TI-84+",
+    "brand": "Texas Instruments",
+    "generation": 3,
+    "released": 2004,
+    "acquired": null
+  },
+  {
+    "title": "Barcode Battler",
+    "brand": "Epoch Co.",
+    "generation": 3,
+    "released": 1991,
+    "acquired": null
+  },
+  {
+    "title": "Loopy",
+    "brand": "Casio",
+    "generation": 5,
+    "released": 1995,
+    "acquired": null
+  },
+  {
+    "title": "ZX80",
+    "brand": "Sinclair",
+    "generation": 3,
+    "released": 1980,
+    "acquired": null
+  },
+  {
+    "title": "ZX81",
+    "brand": "Sinclair",
+    "generation": 3,
+    "released": 1981,
+    "acquired": null
+  },
+  {
+    "title": "ZX Spectrum",
+    "brand": "Sinclair",
+    "generation": 3,
+    "released": 1982,
+    "acquired": null
+  },
+  {
+    "title": "Marty",
+    "brand": "Fm-Towns",
+    "generation": 5,
+    "released": 1993,
+    "acquired": null
+  },
+  {
+    "title": "X68000",
+    "brand": "Sharp",
+    "generation": 4,
+    "released": 1987,
+    "acquired": null
+  },
+  {
+    "title": "PC",
+    "brand": "Windows",
+    "generation": 9,
+    "released": 2022,
+    "acquired": null
+  },
+  {
+    "title": "Playstation",
+    "brand": "Sony",
+    "generation": 5,
+    "released": 1994,
+    "acquired": null
+  },
+  {
+    "title": "Playstation 2",
+    "brand": "Sony",
+    "generation": 6,
+    "released": 2000,
+    "acquired": null
+  },
+  {
+    "title": "Playstation 3",
+    "brand": "Sony",
+    "generation": 7,
+    "released": 2006,
+    "acquired": null
+  },
+  {
+    "title": "Playstation 4 pro",
+    "brand": "Sony",
+    "generation": 8,
+    "released": 2013,
+    "acquired": null
+  },
+  {
+    "title": "Playstation 4",
+    "brand": "Sony",
+    "generation": 8,
+    "released": 2013,
+    "acquired": null
+  },
+  {
+    "title": "PSP",
+    "brand": "Sony",
+    "generation": 7,
+    "released": 2004,
+    "acquired": null
+  },
+  {
+    "title": "PS Vita",
+    "brand": "Sony",
+    "generation": 8,
+    "released": 2011,
+    "acquired": null
+  },
+  {
+    "title": "Xperia play r800i",
+    "brand": "Sony",
+    "generation": 7,
+    "released": 2011,
+    "acquired": null
+  },
+  {
+    "title": "N-gage (mk1)",
+    "brand": "Nokia",
+    "generation": 6,
+    "released": 2003,
+    "acquired": null
+  },
+  {
+    "title": "N-gage (mk2)",
+    "brand": "Nokia",
+    "generation": 6,
+    "released": 2004,
+    "acquired": null
+  },
+  {
+    "title": "Digiblast",
+    "brand": "Nikko",
+    "generation": 6,
+    "released": 2005,
+    "acquired": null
+  },
+  {
+    "title": "SG-1000 mk1",
+    "brand": "Sega",
+    "generation": 3,
+    "released": 1983,
+    "acquired": null
+  },
+  {
+    "title": "Master System mk1",
+    "brand": "Sega",
+    "generation": 3,
+    "released": 1985,
+    "acquired": null
+  },
+  {
+    "title": "Master System mk2",
+    "brand": "Sega",
+    "generation": 3,
+    "released": 1990,
+    "acquired": null
+  },
+  {
+    "title": "Game Gear",
+    "brand": "Sega",
+    "generation": 4,
+    "released": 1990,
+    "acquired": null
+  },
+  {
+    "title": "Mega Drive mk1",
+    "brand": "Sega",
+    "generation": 4,
+    "released": 1988,
+    "acquired": null
+  },
+  {
+    "title": "Mega Drive mk2",
+    "brand": "Sega",
+    "generation": 4,
+    "released": 1993,
+    "acquired": null
+  },
+  {
+    "title": "Mega CD mk1",
+    "brand": "Sega",
+    "generation": 4,
+    "released": 1991,
+    "acquired": null
+  },
+  {
+    "title": "Mega CD mk2",
+    "brand": "Sega",
+    "generation": 4,
+    "released": 1993,
+    "acquired": null
+  },
+  {
+    "title": "32x",
+    "brand": "Sega",
+    "generation": 5,
+    "released": 1994,
+    "acquired": null
+  },
+  {
+    "title": "Saturn",
+    "brand": "Sega",
+    "generation": 5,
+    "released": 1994,
+    "acquired": null
+  },
+  {
+    "title": "Dreamcast",
+    "brand": "Sega",
+    "generation": 6,
+    "released": 1998,
+    "acquired": null
+  },
+  {
+    "title": "IR7000",
+    "brand": "Sega",
+    "generation": 3,
+    "released": 1994,
+    "acquired": null
+  },
+  {
+    "title": "AES",
+    "brand": "Neo Geo",
+    "generation": 4,
+    "released": 1990,
+    "acquired": null
+  },
+  {
+    "title": "Pocket",
+    "brand": "Neo Geo",
+    "generation": 5,
+    "released": 1998,
+    "acquired": null
+  },
+  {
+    "title": "NGX",
+    "brand": "Neo Geo",
+    "generation": 4,
+    "released": 2012,
+    "acquired": null
+  },
+  {
+    "title": "Intellivision",
+    "brand": "Mattel",
+    "generation": 2,
+    "released": 1979,
+    "acquired": null
+  },
+  {
+    "title": "Aquarius",
+    "brand": "Mattel",
+    "generation": 3,
+    "released": 1983,
+    "acquired": null
+  },
+  {
+    "title": "Colecovision",
+    "brand": "CBS",
+    "generation": 2,
+    "released": 1982,
+    "acquired": null
+  },
+  {
+    "title": "Videopac+ G7400",
+    "brand": "Philips",
+    "generation": 3,
+    "released": 1983,
+    "acquired": null
+  },
+  {
+    "title": "MSX2+ 8245",
+    "brand": "Philips",
+    "generation": 3,
+    "released": 1988,
+    "acquired": null
+  },
+  {
+    "title": "3DO mk1",
+    "brand": "Panasonic",
+    "generation": 5,
+    "released": 1993,
+    "acquired": null
+  },
+  {
+    "title": "3DO mk2",
+    "brand": "Panasonic",
+    "generation": 5,
+    "released": 1994,
+    "acquired": null
+  },
+  {
+    "title": "PC Engine",
+    "brand": "NEC",
+    "generation": 4,
+    "released": 1987,
+    "acquired": null
+  },
+  {
+    "title": "SuperGrafx",
+    "brand": "NEC",
+    "generation": 4,
+    "released": 1989,
+    "acquired": null
+  },
+  {
+    "title": "Super Cdrom2",
+    "brand": "NEC",
+    "generation": 4,
+    "released": 1991,
+    "acquired": null
+  },
+  {
+    "title": "PC-FX",
+    "brand": "NEC",
+    "generation": 5,
+    "released": 1994,
+    "acquired": null
+  },
+  {
+    "title": "Xbox",
+    "brand": "Microsoft",
+    "generation": 6,
+    "released": 2001,
+    "acquired": null
+  },
+  {
+    "title": "Xbox 360",
+    "brand": "Microsoft",
+    "generation": 7,
+    "released": 2005,
+    "acquired": null
+  },
+  {
+    "title": "Ouya",
+    "brand": "Razer",
+    "generation": 7,
+    "released": 2013,
+    "acquired": null
+  },
+  {
+    "title": "XE Game System",
+    "brand": "Atari",
+    "generation": 3,
+    "released": 1987,
+    "acquired": null
+  },
+  {
+    "title": "Hyperscan",
+    "brand": "Mattel",
+    "generation": 7,
+    "released": 2006,
+    "acquired": null
+  },
+  {
+    "title": "NES-101 top loader",
+    "brand": "Nintendo",
+    "generation": 3,
+    "released": 1993,
+    "acquired": null
+  },
+  {
+    "title": "Game Master",
+    "brand": "Hartung",
+    "generation": 4,
+    "released": 1990,
+    "acquired": null
+  },
+  {
+    "title": "Vectrex",
+    "brand": "MB",
+    "generation": 2,
+    "released": 1982,
+    "acquired": null
+  },
+  {
+    "title": "Zodiac",
+    "brand": "Tapwave",
+    "generation": 7,
+    "released": 2003,
+    "acquired": null
+  },
+  {
+    "title": "Handy game",
+    "brand": "Timetop",
+    "generation": 4,
+    "released": 2004,
+    "acquired": null
+  },
+  {
+    "title": "TRS-80 Color Computer II",
+    "brand": "Tandy",
+    "generation": 3,
+    "released": 1980,
+    "acquired": null
+  }
+]

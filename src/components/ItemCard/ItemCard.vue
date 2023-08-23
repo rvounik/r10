@@ -23,6 +23,12 @@ const openGame = url => {
     <section class="card_section_text">
       <p>
         {{ item.description }}
+        <span v-if="item.youtube">
+          <a :href="item.youtube" target="_blank">
+            <img src="/src/assets/images/icon_youtube.png" alt="youtube"/>
+            It is also on YouTube!
+          </a>
+        </span>
       </p>
     </section>
   </article>
@@ -120,8 +126,24 @@ const openGame = url => {
     .card_section_text {
       width: 50%;
       padding: 2.5rem 2rem 0;
+    }
+  }
 
+  .card_section_text {
+    span {
+      margin-top: 1rem;
+      display: block;
 
+      a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: $red;
+
+        img {
+          margin-right: 1rem;
+        }
+      }
     }
   }
 }

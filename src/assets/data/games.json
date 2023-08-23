@@ -6,7 +6,8 @@
       "image": "game_kart.png",
       "tags": ["html", "javascript"],
       "url": "../games/kart/index.html",
-      "year": "2015"
+      "year": "2015",
+      "youtube": "https://www.youtube.com/watch?v=en9Bi2vv-nU"
     },
     {
       "id": "out-of-bounds",
@@ -15,7 +16,8 @@
       "image": "game_out-of-bounds.png",
       "tags": ["html", "javascript"],
       "url": "../games/outofbounds/index.html",
-      "year": "2020"
+      "year": "2020",
+      "youtube": "https://www.youtube.com/watch?v=Sj0wbW2nMm0"
     },
     {
       "id": "thramor-2",
@@ -42,7 +44,8 @@
       "image": "game_rainbow-panic.png",
       "tags": ["html", "javascript"],
       "url": "../games/rainbowpanic/index.html",
-      "year": "2014"
+      "year": "2014",
+      "youtube": "https://www.youtube.com/watch?v=o03A9bHo8bc"
     },
     {
       "id": "legend-of-thramor",
@@ -51,7 +54,8 @@
       "image": "game_legend-of-thramor.png",
       "tags": ["html", "javascript"],
       "url": "../games/thramor/index.html",
-      "year": "2014"
+      "year": "2014",
+      "youtube": "https://www.youtube.com/watch?v=sR_BTMeokIc"
     },
     {
       "id": "chess",

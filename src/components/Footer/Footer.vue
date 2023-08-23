@@ -7,7 +7,6 @@
   </footer>
 </template>
 
-
 <style lang="scss" scoped>
 footer {
   background: $black;

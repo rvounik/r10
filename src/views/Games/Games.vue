@@ -1,9 +1,10 @@
 <script setup>
 import { reactive, watch, onMounted, computed, ref } from 'vue';
 import { useGamesStore } from '../../stores/games';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore, { Navigation } from 'swiper/core';
 import ItemCard from './../../components/ItemCard/ItemCard.vue';
+import { PacmanLoader } from 'vue3-spinner';
 import 'swiper/css';
 
 SwiperCore.use([Navigation]);
@@ -51,7 +52,9 @@ const nextSlide = () => {
 
 <template>
   <div v-if="isLoading" class="loader">
-    <!--      <easy-spinner/>-->
+    <PacmanLoader
+        color="#ffffff"
+        size="25" />
   </div>
   <div v-else>
   <Swiper
@@ -60,7 +63,7 @@ const nextSlide = () => {
       @swiper="onSwiper"
       :class="swiper"
   >
-      <SwiperSlide v-for="(item, index) in store.games.value" :item="item" :key="index" class="testing">
+      <SwiperSlide v-for="(item, index) in store.games.value" :item="item" :key="index" class="swiper-slide">
         <ItemCard :item="item" />
       </SwiperSlide>
   </Swiper>
@@ -77,7 +80,12 @@ const nextSlide = () => {
 </template>
 
 <style lang="scss" scoped>
-.testing {
+.loader {
+  width: 100px;
+  margin-left: calc(50% - 50px);
+}
+
+.swiper-slide {
   display: flex;
   justify-content: center;
 }
@@ -113,5 +121,4 @@ const nextSlide = () => {
     left: unset;
   }
 }
-
 </style>

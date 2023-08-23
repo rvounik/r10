@@ -87,7 +87,6 @@ const isActive = (id) => {
       color: $white;
     }
   }
-
 }
 
 @media screen and (max-width: $breakpoint-small) {
