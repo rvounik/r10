@@ -14,7 +14,7 @@ defineProps({
 <style lang="scss" scoped>
 article {
   width: 100%;
-  max-width: $width-hard-limit;
+  max-width: $width-hard-max;
   overflow: auto;
   display: inline-block;
 

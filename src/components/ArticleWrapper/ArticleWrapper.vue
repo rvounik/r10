@@ -18,13 +18,13 @@ article {
   display: inline-block;
   position: relative;
   width: 100%;
-  max-width: $width-hard-limit;
+  max-width: $width-hard-max;
 
   :slotted(h2) {
     font-size: 2rem;
     padding-bottom: 1rem;
     display: inline-block;
-    max-width: $width-hard-limit;
+    max-width: $width-hard-max;
     width: 100%;
     color: $black-light;
     text-align: left;
@@ -42,7 +42,7 @@ article {
     text-align: left;
     width: 100%;
     display: inline-block;
-    max-width: $width-hard-limit;
+    max-width: $width-hard-max;
     box-sizing: border-box;
     color: $black;
 

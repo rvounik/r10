@@ -20,7 +20,7 @@ defineProps({
   padding: 3rem 2rem;
   text-align: left;
   overflow-y: auto;
-  max-width: $width-hard-limit;
+  max-width: $width-hard-max;
   box-sizing: border-box;
   flex-direction: column;
   display: inline-block;

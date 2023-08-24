@@ -22,7 +22,7 @@
   background: #666;
   overflow: hidden;
   box-sizing: border-box;
-  min-width: 480px;
+  min-width: 320px;
 }
 </style>
 

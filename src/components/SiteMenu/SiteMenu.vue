@@ -28,13 +28,14 @@ const isActive = (id) => {
       <li :class="{ active: isActive('consoles'), consoles: isActive('consoles') }">
         <router-link :to="{ path: '/consoles' }">Consoles</router-link>
       </li>
+      <li :class="{ active: isActive('contact'), contact: isActive('contact') }">
+        <router-link :to="{ path: '/contact' }">Contact</router-link>
+      </li>
     </ul>
   </nav>
 </template>
 
-
 <style lang="scss" scoped>
-
 .nav {
   display: flex;
   margin: 0 auto;
@@ -66,7 +67,7 @@ const isActive = (id) => {
 
 .active {
   background-color: #666;
-  font-weight: 700;
+  font-weight: bold;
 
   a {
     color: $white;
@@ -82,6 +83,14 @@ const isActive = (id) => {
 
   &.consoles {
     background-color: chocolate;
+
+    a {
+      color: $white;
+    }
+  }
+
+  &.contact {
+    background-color: #009286;
 
     a {
       color: $white;

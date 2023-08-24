@@ -4,6 +4,7 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 const About = () => import('../views/About/About.vue')
 const Games = () => import('../views/Games/Games.vue')
 const Consoles = () => import('../views/Consoles/Consoles.vue')
+const Contact = () => import('../views/Contact/Contact.vue')
 const Error = () => import('./../views/Error.vue')
 
 const routes = [
@@ -30,6 +31,11 @@ const routes = [
     path: '/consoles',
     name: 'consoles',
     component: Consoles,
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: Contact,
   },
   {
     path: '/:pathMatch(.*)*',
