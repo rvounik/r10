@@ -692,5 +692,12 @@
     "generation": 3,
     "released": 1980,
     "acquired": null
+  },
+    {
+    "title": "Colecovision Flashback",
+    "brand": "atGames",
+    "generation": 2,
+    "released": 2014,
+    "acquired": 2023
   }
 ]
