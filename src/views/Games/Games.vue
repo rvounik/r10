@@ -67,6 +67,10 @@ const nextSlide = () => {
         <ItemCard :item="item" />
       </SwiperSlide>
   </Swiper>
+
+    <div class="swipe-indicator">
+      swipe left / right for more!
+    </div>
   </div>
 
     <div class="button testLeft" @click.prevent="prevSlide">
@@ -80,6 +84,15 @@ const nextSlide = () => {
 </template>
 
 <style lang="scss" scoped>
+.swipe-indicator {
+  margin: 0.5rem 0 1rem;
+  color: #ccc;
+
+  @media screen and (min-width: $breakpoint-small) {
+    display: none;
+  }
+}
+
 .loader {
   width: 100px;
   margin-left: calc(50% - 50px);
