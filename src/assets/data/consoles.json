@@ -194,7 +194,8 @@
     "brand": "Commodore",
     "generation": 3,
     "released": 1982,
-    "acquired": null
+    "acquired": null,
+    "link": "c64"
   },
   {
     "title": "c64 Game System",
@@ -706,5 +707,12 @@
     "generation": 3,
     "released": 1983,
     "acquired": 2023
+  },
+  {
+    "title": "2DS",
+    "brand": "Nintendo",
+    "generation": 8,
+    "released": 1983,
+    "acquired": 2024
   }
 ]
