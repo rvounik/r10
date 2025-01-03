@@ -763,5 +763,19 @@
     "generation": 6,
     "released": 1995,
     "acquired": 2024
+  },
+  {
+    "title": "Amiga 600",
+    "brand": "Commodore",
+    "generation": 5,
+    "released": 1992,
+    "acquired": 2024
+  },
+  {
+  "title": "New Game 2600",
+  "brand": "Atari",
+  "generation": 2,
+  "released": 1979,
+  "acquired": 2024
   }
 ]
