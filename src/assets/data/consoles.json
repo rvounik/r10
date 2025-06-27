@@ -28,7 +28,28 @@
     "acquired": null
   },
   {
+    "title": "Pocket Fami",
+    "brand": "Nintendo",
+    "generation": 3,
+    "released": 1983,
+    "acquired": null
+  },
+  {
+    "title": "Game Axe",
+    "brand": "Legend technology",
+    "generation": 3,
+    "released": 1989,
+    "acquired": null
+  },
+  {
     "title": "NES",
+    "brand": "Nintendo",
+    "generation": 3,
+    "released": 1985,
+    "acquired": null
+  },
+  {
+    "title": "NES mini",
     "brand": "Nintendo",
     "generation": 3,
     "released": 1985,
@@ -373,6 +394,13 @@
     "acquired": null
   },
   {
+    "title": "PSX",
+    "brand": "Sony",
+    "generation": 6,
+    "released": 2000,
+    "acquired": null
+  },
+  {
     "title": "Playstation 3",
     "brand": "Sony",
     "generation": 7,
@@ -527,6 +555,13 @@
     "acquired": null
   },
   {
+    "title": "Pocket Colour",
+    "brand": "Neo Geo",
+    "generation": 5,
+    "released": 1998,
+    "acquired": null
+  },
+  {
     "title": "Pocket",
     "brand": "Neo Geo",
     "generation": 5,
@@ -538,6 +573,13 @@
     "brand": "Neo Geo",
     "generation": 4,
     "released": 2012,
+    "acquired": null
+  },
+  {
+    "title": "Neo Geo CD",
+    "brand": "Neo Geo",
+    "generation": 4,
+    "released": 1990,
     "acquired": null
   },
   {
@@ -591,6 +633,13 @@
   },
   {
     "title": "PC Engine",
+    "brand": "NEC",
+    "generation": 4,
+    "released": 1987,
+    "acquired": null
+  },
+  {
+    "title": "PC Engine Shuttle",
     "brand": "NEC",
     "generation": 4,
     "released": 1987,
@@ -702,6 +751,13 @@
     "acquired": 2023
   },
   {
+    "title": "Intellivision Flashback",
+    "brand": "atGames",
+    "generation": 2,
+    "released": 2014,
+    "acquired": 2023
+  },
+  {
     "title": "PV-1000",
     "brand": "Casio",
     "generation": 3,
@@ -777,5 +833,75 @@
   "generation": 2,
   "released": 1979,
   "acquired": 2024
+  },
+  {
+    "title": "Marty",
+    "brand": "Fm-Towns PC",
+    "generation": 5,
+    "released": 1993,
+    "acquired": null
+  },
+  {
+    "title": "Wii mini",
+    "brand": "Nintendo",
+    "generation": 7,
+    "released": 2006,
+    "acquired": null
+  },
+  {
+    "title": "Gamate",
+    "brand": "Bit corporation",
+    "generation": 7,
+    "released": 1990,
+    "acquired": null
+  },
+  {
+    "title": "Sega Pico",
+    "brand": "Sega",
+    "generation": 4,
+    "released": 1993,
+    "acquired": null
+  },
+  {
+    "title": "Nuon",
+    "brand": "Samsung",
+    "generation": 6,
+    "released": 2000,
+    "acquired": null
+  },
+  {
+    "title": "Pocket Challenge v2",
+    "brand": "Benesse",
+    "generation": 6,
+    "released": 2000,
+    "acquired": null
+  },
+  {
+    "title": "Game Ark S3",
+    "brand": "Game Ark",
+    "generation": 6,
+    "released": 2023,
+    "acquired": null
+  },
+  {
+    "title": "R-zone",
+    "brand": "Tiger",
+    "generation": 6,
+    "released": 1995,
+    "acquired": null
+  },
+  {
+    "title": "Switch OLED",
+    "brand": "Nintendo",
+    "generation": 8,
+    "released": 2018,
+    "acquired": null
+  },
+  {
+  "title": "Mirada",
+  "brand": "Mirada",
+  "generation": 4,
+  "released": 2000,
+  "acquired": null
   }
 ]
